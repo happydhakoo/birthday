@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,221 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&family=Sriracha&family=Titan+One&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
+<style>:root {
+    --pink-bg: #feecea;
+    --accent-pink: #FF7882;
+    --dark-text: #333;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--pink-bg);
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+#wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: radial-gradient(#fff 10%, transparent 10%);
+    background-size: 30px 30px;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.title-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.animate-text {
+    font-family: 'Titan One', cursive;
+    font-size: clamp(3rem, 10vw, 5rem);
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px var(--dark-text);
+}
+
+.happy { color: var(--white); }
+.birthday { color: var(--accent-pink); }
+
+.hat-wrap {
+    position: absolute;
+    top: -30px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: #ffd700;
+    transform: rotate(15deg);
+    animation: bounce 2s infinite;
+}
+
+/* --- Profile Section --- */
+.profile-card {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-frame {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 8px solid var(--dark-text);
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-tag {
+    background: var(--accent-pink);
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 3px solid var(--dark-text);
+    margin-top: -20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- Button --- */
+.main-btn {
+    background: var(--accent-pink);
+    border: 3px solid var(--dark-text);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-family: 'Sriracha', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    transform: scale(1.05);
+    background: var(--dark-text);
+    color: var(--white);
+}
+
+/* --- Modal & Card --- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none; /* Toggled by JS */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.card-container {
+    width: 100%;
+    max-width: 350px;
+    height: 450px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.8s ease;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-front {
+    background: var(--accent-pink);
+    color: white;
+    border: 4px solid white;
+}
+
+.card-back {
+    background: white;
+    transform: rotateY(180deg);
+    border: 4px solid var(--accent-pink);
+    color: var(--dark-text);
+    overflow-y: auto;
+}
+
+.card-container:hover .card-front { transform: rotateY(-180deg); }
+.card-container:hover .card-back { transform: rotateY(0deg); }
+
+.message-content h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--accent-pink);
+}
+
+.message-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- Animations --- */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(15deg); }
+    50% { transform: translateY(-10px) rotate(15deg); }
+}
+
+.heart-pulse {
+    font-size: 2rem;
+    color: var(--accent-pink);
+    margin-top: 15px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    50% { transform: scale(1.2); }
+}
+
+/* Mobile Tweaks */
+@media (max-width: 480px) {
+    .img-frame { width: 150px; height: 150px; }
+    .card-container { height: 400px; }
+    .message-content p { font-size: 0.85rem; }
+}</style>
 <body>
     <div id="wrapper">
         <div class="stars-container">
@@ -80,4 +296,40 @@
 
     <script src="script.js"></script>
 </body>
+<script>
+$(document).ready(function() {
+    const modal = $('#mail-modal');
+    const openBtn = $('#open-mail');
+    const closeBtn = $('.close-modal');
+
+    // Open Modal
+    openBtn.on('click', function() {
+        modal.css('display', 'flex').hide().fadeIn();
+        // Prevent background scrolling
+        $('body').css('overflow', 'hidden');
+    });
+
+    // Close Modal
+    closeBtn.on('click', function() {
+        modal.fadeOut(function() {
+            $(this).css('display', 'none');
+            $('body').css('overflow', 'auto');
+        });
+    });
+
+    // Close on clicking outside the card
+    $(window).on('click', function(event) {
+        if (event.target == modal[0]) {
+            closeBtn.click();
+        }
+    });
+
+    // Optional: Add a subtle floating effect to the profile card
+    $(document).on('mousemove', function(e) {
+        let ax = -($(window).innerWidth() / 2 - e.pageX) / 40;
+        let ay = ($(window).innerHeight() / 2 - e.pageY) / 40;
+        $('.profile-card').css("transform", "rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
+    });
+});
+</script>
 </html>
