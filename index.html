@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday NANCY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&family=Sriracha&family=Titan+One&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="stars-container">
+            <div class="star s1"></div>
+            <div class="star s2"></div>
+            <div class="star s3"></div>
+        </div>
+
+        <header class="hero-section">
+            <div class="flag-container">
+                <img src="https://api.iconify.design/twemoji:party-popper.svg" class="confetti-icon" alt="">
+            </div>
+            
+            <div class="title-group">
+                <h1 class="animate-text happy">Happy</h1>
+                <h1 class="animate-text birthday">Birthday</h1>
+                <div class="hat-wrap">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="img-frame">
+                    <img src="./images/unnamed.png" alt="Mehwish" onerror="this.src='https://via.placeholder.com/150'">
+                </div>
+                <div class="name-tag">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Dear NANCY</span>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+
+            <button id="open-mail" class="main-btn">
+                Click Here NANCY <i class="fa-regular fa-envelope"></i>
+            </button>
+        </header>
+
+        <div id="mail-modal" class="modal-overlay">
+            <i class="fa-solid fa-xmark close-modal"></i>
+            
+            <div class="card-container">
+                <div class="card-front">
+                    <div class="card-inner">
+                        <img src="./images/unnamed.png" class="mini-avatar" alt="">
+                        <h3>To: NANCY 💖</h3>
+                        <p>Open for a surprise...</p>
+                        <div class="tap-hint">Hover or Tap to Flip</div>
+                    </div>
+                </div>
+
+                <div class="card-back">
+                    <div class="message-content">
+                        <h3>Happy Birthday! 🥳</h3>
+                        <p id="typing-text">
+                            "Happy Birthday to the undisputed queen of the family!
+                             Wishing you a year full of laughter, love, and zero stress.
+                             I am so lucky to have your wisdom and your warmth in my life.
+                             I hope your day is as beautiful and special as the heart you 
+                             share with everyone around you. 🎂✨
+                        </p>
+                        <div class="heart-pulse">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
